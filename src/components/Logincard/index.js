@@ -1,11 +1,12 @@
-import { Box, Button, Center, FormControl, FormErrorMessage, FormHelperText, FormLabel, IconButton, Input, InputGroup, InputRightElement, Text, VStack } from '@chakra-ui/react'
+import { Button, FormControl, FormErrorMessage, FormHelperText, FormLabel, IconButton, Input, InputGroup, InputRightElement, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import style from "../../styles/login.module.css"
 import { RiEyeCloseLine, RiEyeFill } from "react-icons/ri"
 
 function LoginCard() {
     const [isErrorEmail, setIsErrorEmal] = React.useState(false)
-    const [message, setMessage] = React.useState({text: "v h ", color: "red"})
+    const [message, setMessage] = React.useState({text: "", color: "red"})
+    const [isLoading, setIsLoading] = React.useState(false);
     const [isErrorPassword, setIsErrorPassword] = React.useState(false)
     const [login, setLogin] = React.useState({
         email: "",
@@ -25,18 +26,22 @@ function LoginCard() {
     const handleSubmit = async (evt) => {
         evt.preventDefault();
         
+        setIsLoading(true);
         const options = {method: "POST", body: JSON.stringify( login)};
+
         const response = await fetch("api/login", options);
         const data = await response.json(); 
 
         const {token} = data;
-        console.log( data )
+        
         if(token){
             return setMessage({text: "success", color:"green"} );
         }
 
         setMessage({text: data.message, color:"red"} );
+        setIsLoading(false);
     }
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -118,7 +123,7 @@ function LoginCard() {
                 <FormControl
                     textAlign={"end"}
                 >
-                    <Button type='submit'>
+                    <Button type='submit' isLoading={isLoading}>
                         Entrar
                     </Button>
                 </FormControl>
