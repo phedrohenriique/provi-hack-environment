@@ -1,7 +1,9 @@
-export default function Button() {
+import { Button, ButtonGroup } from '@chakra-ui/react'
+
+export default function Btn() {
     return (
         <div>
-            <button>button</button>
+            <Button colorScheme='blue'>Button</Button>
         </div>
     )
 }
