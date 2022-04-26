@@ -7,7 +7,7 @@ export default function RegisterCard() {
     <>
       <FormControl 
       background='green.400'
-      width='30vw'
+      minWidth='30vw'
       height='fit-content'
       display='flex'
       flexDirection='column'
