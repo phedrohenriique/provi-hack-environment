@@ -12,17 +12,15 @@ export default async function loginRoute(req, res) {
     }
     
     try {
-        const usuario  = await conn("users").select().first().where("email", email);
+        const {data}  = await conn.from("users").select("*").eq("email", email);
         
+       const [usuario] = data;
        
-
         if (!usuario) {
             return res.status(400).json({message: "O usuario não foi encontrado"});
         }
-
-        const newPass = await bcrypt.hash(usuario.password,10); // senha no banco nao criptografada
-
-        const senhaCorreta = await bcrypt.compare(senha, newPass);
+//==============================        senha no banco tem que ser encriptada antes de salvarem ==========================
+        const senhaCorreta = await bcrypt.compare(senha, usuario.password); 
 
         if (!senhaCorreta) {
             return res.status(400).json({message:"Email e senha não confere"});
@@ -38,6 +36,6 @@ export default async function loginRoute(req, res) {
             token
         });
     } catch (error) {
-        return res.status(400).json(error.message);
+        return res.status(403).json( {...error});
     }
 }
