@@ -51,7 +51,7 @@ function LoginCard() {
                 border="2px"
                 padding={10}
                 borderRadius="3xl"
-                className={style.form}
+                className={style.form}                
             >
                 <Text
                     fontWeight="bold"
