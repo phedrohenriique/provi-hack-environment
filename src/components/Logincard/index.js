@@ -2,6 +2,7 @@ import { Button, FormControl, FormErrorMessage, FormHelperText, FormLabel, IconB
 import React from 'react'
 import style from "../../styles/login.module.css"
 import { RiEyeCloseLine, RiEyeFill } from "react-icons/ri"
+import { useRouter } from 'next/router'
 
 function LoginCard() {
     const [isErrorEmail, setIsErrorEmal] = React.useState(false)
@@ -14,7 +15,8 @@ function LoginCard() {
     })
 
     const [show, setShow] = React.useState(false);
-
+    const Router = useRouter();
+    
     const handleInputChange = (evt) => {
         const { name, value } = evt.target;
         setLogin({ ...login, ...{ [name]: value } });
@@ -35,6 +37,11 @@ function LoginCard() {
         const {token} = data;
         
         if(token){
+            localStorage.setItem("Token",JSON.stringify(token));
+            Router.push({
+              pathname: "/home",
+              query: { user: data },
+            })
             return setMessage({text: "success", color:"green"} );
         }
 
