@@ -1,0 +1,17 @@
+@keyframes entradaLogin {
+    0%{
+        transform: translateX(calc(-100vw )) skew(15deg, 15deg);
+    }
+    50%{
+        transform: translateX(200px) skew(-15deg, -15deg);
+    }
+    100%{
+        transform: translateX(0) skew(0);;
+    }
+}
+
+.form{
+    animation-name: entradaLogin;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}

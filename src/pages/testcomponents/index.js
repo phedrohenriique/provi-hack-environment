@@ -1,7 +1,10 @@
 import React from 'react'
+import RegisterCard from '../../components/registercard'
 
-export default function index() {
-  return (
-    <div>testcomponents</div>
-  )
+export default function TestComponents() {
+    return (
+        <>
+            <RegisterCard></RegisterCard>
+        </>
+    )
 }
