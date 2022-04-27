@@ -1,6 +1,6 @@
 import { ChakraProvider } from '@chakra-ui/react'
 import '../styles/globals.css'
-import RegisterCard from '../components/registercard'
+
 function MyApp({ Component, pageProps }) {
 
   return <>
