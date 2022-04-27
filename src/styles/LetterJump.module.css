@@ -1,0 +1,37 @@
+
+.letterUP{
+    color: green;
+    animation-duration: 1s;
+    animation-name: jumpUP;
+    animation-iteration-count: infinite;
+}
+
+.letterDown{
+    color: green;
+    animation-duration: 1s;
+    animation-name: jumpDown;
+    animation-iteration-count: infinite;
+}
+@keyframes jumpUP{
+    0%{
+       
+    }
+    25%{
+        transform: translate(0, -50px);
+    }
+    100%{
+        
+    }
+}
+
+@keyframes jumpDown{
+    0%{
+       
+    }
+    25%{
+        transform: translate(0, -50px);
+    }
+    100%{
+        
+    }
+}
