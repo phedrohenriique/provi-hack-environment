@@ -6,6 +6,20 @@ import {
 } from '@chakra-ui/react'
 
 export default function StyledInput({ label, placeholder, type }) {
+
+    // setting variable value and the hook useState to set it
+    // same as writing const value = document.
+    const [value, setValue] = React.useState({
+        input : ''
+    })
+    // getting the targetted component value defined in component props
+    const valueInputHandler = (event)=>{
+        setValue(event.target.value)
+        return console.log(value)
+    }
+    
+
+
     return (
         <>
             <Box 
@@ -21,8 +35,9 @@ export default function StyledInput({ label, placeholder, type }) {
                 type={type ? type : 'text'} 
                 placeholder={placeholder ? placeholder : ''}
                 _placeholder={{opacity: 0.8,color: 'gray'}}
-                borderRadius='50px'
-                border='2px solid #003B70'
+                value={value.input}
+                onChange={valueInputHandler}
+                id={label.toLocaleLowerCase('en-US')}
                 ></Input>
             </Box>
         </>
