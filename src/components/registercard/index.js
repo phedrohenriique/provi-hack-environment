@@ -64,6 +64,7 @@ export default function RegisterCard() {
         paddingY='10%'
         gap={3}
         borderRadius='10px'
+        as='form'
       >
         <StyledInput
           label='Nome'
@@ -95,6 +96,7 @@ export default function RegisterCard() {
         width='50%'
         alignSelf='center'
         onClick={()=>{console.log(getInputs(name,cpf,password,email))}}
+        type='submit'
         >
           Registre-se
         </Button>
