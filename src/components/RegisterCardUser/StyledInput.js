@@ -2,20 +2,15 @@ import React from 'react'
 import { 
     Box, 
     FormLabel, 
-    Input 
-} from '@chakra-ui/react'
+    Input} from '@chakra-ui/react'
 
-export default function StyledInput({ label, placeholder, type}) {
-    // setting variable value and the hook useState to set it
-    // same as writing const value = document.
-    const [value, setValue] = React.useState({
-        input : ''
-    })
-    // getting the targetted component value defined in component props
-    const valueInputHandler = (event)=>{
-        setValue({input: event.target.value})
-        console.log(value)
-    }
+export default function StyledInput({ label, placeholder, type, value, setValue}) {
+
+    // const [value, setValue] = React.useState({input : ''})
+    // const valueInputHandler = (event)=>{setValue({input: event.target.value})
+    // props are passed through parent through variables
+    // in this case value and setValue are the variable in the parent and the
+    // handler function
 
     return (
 
@@ -33,8 +28,8 @@ export default function StyledInput({ label, placeholder, type}) {
                 type={type ? type : 'text'} 
                 placeholder={placeholder ? placeholder : ''}
                 _placeholder={{opacity: 0.8,color: 'gray'}}
-                value={value.input}
-                onChange={valueInputHandler}
+                value={value}
+                onChange={setValue}
                 id={label.toLocaleLowerCase('en-US')}
                 ></Input>
             </Box>
