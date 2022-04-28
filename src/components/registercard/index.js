@@ -52,6 +52,9 @@ export default function RegisterCard() {
   // the values of variables have to be passed through props
   // those props are connected with component children props
 
+  // type submit in the button makes page refresh, turn it off to see and
+  // confirm data
+
   return (
     <>
       <FormControl
