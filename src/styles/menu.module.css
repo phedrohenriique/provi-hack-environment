@@ -1,0 +1,29 @@
+
+@keyframes entrada {
+    0%{
+        
+        transform: scale(0,0) translate(0,0);
+    }
+    100%{
+        
+        transform: scale(1,1);
+    }
+}
+
+  @media screen and (max-width: 800px) {
+    .mobileMenu{
+        height: 15vw;
+    }
+    
+  }
+  @media screen and (min-width: 800px) {
+    .mobileMenu{
+        display: none;
+    }
+    
+  }
+  @media screen and (max-width: 800px) {
+    .menuDesktop{
+       display: none;
+    }
+  }
