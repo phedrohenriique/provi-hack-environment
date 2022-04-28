@@ -5,8 +5,7 @@ import {
     Input 
 } from '@chakra-ui/react'
 
-export default function StyledInput({ label, placeholder, type }) {
-
+export default function StyledInput({ label, placeholder, type}) {
     // setting variable value and the hook useState to set it
     // same as writing const value = document.
     const [value, setValue] = React.useState({
@@ -14,13 +13,12 @@ export default function StyledInput({ label, placeholder, type }) {
     })
     // getting the targetted component value defined in component props
     const valueInputHandler = (event)=>{
-        setValue(event.target.value)
-        return console.log(value)
+        setValue({input: event.target.value})
+        console.log(value)
     }
-    
-
 
     return (
+
         <>
             <Box 
             display='flex'
