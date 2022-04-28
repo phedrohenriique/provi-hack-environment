@@ -13,22 +13,26 @@ export default async function handler(req, res) {
                 const [usuario] = data; // first element
 
                 console.log();
-                
+
                 if (!!usuario)
                     return res.status(400).json({ message: "Email ja cadastrado" });
 
 
                 const passwordEncryted = await Bcrypt.hash(dados.password, 10);
                 dados.password = passwordEncryted;
-                const {error} = await conn
-                                        .from("users")
-                                        .insert([dados])
+                //if((!dados.cpf && !dados.cnpj) ||(dados.cpf && dados.cnpj)){
+                //    return res.status(400).json({ message: "CPF ou CNPJ devem ser preenchidos" });
+                //}
+                // adicionamos o campo cnpj pra diferenciar quem era pessoa fisica ou juridica, por isso fiz essa validação para evitar a pessoa digitar cpf e cnpj. acaba que essa validação é meio 'inutil' pois o que estavamos pensando era no front, na hora de preencher o formulario ele (atraves de um ternario no campo) só pegar e preencher um dos dois campos, deixando o outro null. nao sei se deu pra entender, depois te explico qlqr coisa. 
+                const { error } = await conn
+                    .from("users")
+                    .insert([dados])
 
-                
+
                 if (error)
                     return res.status(400).json({ message: "erro ao cadastrar" });
 
-                const {password, ...dataToSend} = dados;
+                const { password, ...dataToSend } = dados;
                 return res.status(201).json({ message: "usuario adicionado", dataToSend });
 
             }
