@@ -4,25 +4,26 @@ import { useState } from "react";
 import { RiCloseLine, RiMenu2Fill } from "react-icons/ri";
 import style from "../../../styles/menu.module.css"
 
-function MenuMobile(){
+function MenuMobile() {
     const [Open, setOpen] = useState(false)
-    return(
-        <Box className={style.mobileMenu}>
+    return (
+        <Box className={style.mobileMenu} h="100%">
             <Box>
-                <Box >
-                    <IconButton
-                        variant=""
-                        fontSize='35px'
-                        icon={!Open ? <RiMenu2Fill /> : <RiCloseLine />}
-                        _focus={{}}
-                        onClick={() => {
-                            setOpen(!Open);
-                        }}
-                    />
-                </Box>
+                <IconButton
+                    variant=""
+                    
+                    fontSize="24"
+                    icon={!Open ? <RiMenu2Fill /> : <RiCloseLine />}
+                    _focus={{}}
+                    onClick={() => {
+                        setOpen(!Open);
+                    }}
+                />
             </Box>
+
             {Open && <VStack
-                w="60%" 
+               
+                w="60%"
                 h="100%"
                 bgColor="gray"
                 position="absolute"
@@ -35,7 +36,7 @@ function MenuMobile(){
                 <Link href="#">Empresas parceiras</Link>
                 <Link href="#">Instituiçoes cadastradas</Link>
                 <Link href="#">Quero me cadastrar</Link>
-                
+
             </VStack>}
         </Box>
     )

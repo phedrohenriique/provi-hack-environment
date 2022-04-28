@@ -9,12 +9,11 @@ function MenuDesktop() {
     return (
         <box className={style.menuDesktop} >
             <HStack 
-                spacing="3rem"
+                spacing="1rem"
             >
                 <LinkLocal href="#" >Quem somos nós</LinkLocal>
                 <LinkLocal href="#">Empresas parceiras</LinkLocal>
                 <LinkLocal href="#">Instituiçoes cadastradas</LinkLocal>
-                
                 <LinkLocal href="#" bg="gray" p="2">Quero me cadastrar</LinkLocal>
                
             </HStack>

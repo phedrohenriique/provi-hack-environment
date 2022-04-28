@@ -1,13 +1,5 @@
-
-@keyframes entrada {
-    0%{
-        
-        transform: scale(0,0) translate(0,0);
-    }
-    100%{
-        
-        transform: scale(1,1);
-    }
+.containerLinks{
+    gap: 1rem;  
 }
 
   @media screen and (max-width: 800px) {
