@@ -1,6 +1,8 @@
-import { Box, HStack, IconButton, Image } from '@chakra-ui/react'
+import { Box, Flex, HStack, IconButton, Image } from '@chakra-ui/react'
+import Link from 'next/link'
 import React from 'react'
 import { RiEyeFill } from 'react-icons/ri'
+import LinkLocal from '../LinkLocal'
 import MenuDesktop from '../Menu/MenuDesktop'
 
 import MenuMobile from '../Menu/MenuMobile'
@@ -8,15 +10,18 @@ import MenuMobile from '../Menu/MenuMobile'
 function Header() {
     return (
         <HStack
-            bgColor="#fff"
             p={5}
             justify="space-between"
             alignItems="center"
+            h="80px"
+            bgColor={"#003B70"}
         >
             <MenuMobile />
-            <Box w="50px" >
-                <Image w="100%" src='assets/logo_preta.png' alt="logo" />
-            </Box>
+            
+            <Link href="/home">
+                <Image maxH="100%" src='assets/logo.png' alt="logo" />
+            </Link>
+            
             <MenuDesktop />
         </HStack>
     )

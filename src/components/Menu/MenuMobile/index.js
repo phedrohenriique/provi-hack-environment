@@ -1,8 +1,8 @@
 import { Box, IconButton, VStack } from "@chakra-ui/react";
-import Link from "next/link";
 import { useState } from "react";
 import { RiCloseLine, RiMenu2Fill } from "react-icons/ri";
 import style from "../../../styles/menu.module.css"
+import LinkLocal from "../../LinkLocal";
 
 function MenuMobile() {
     const [Open, setOpen] = useState(false)
@@ -23,7 +23,7 @@ function MenuMobile() {
 
             {Open && <VStack
                
-                w="60%"
+                w="70%"
                 h="100%"
                 bgColor="gray"
                 position="absolute"
@@ -31,11 +31,12 @@ function MenuMobile() {
                 left={0}
                 spacing={"30px"}
                 pt="30px"
+                align={"center"}
             >
-                <Link href="#">Quem somos nós?</Link>
-                <Link href="#">Empresas parceiras</Link>
-                <Link href="#">Instituiçoes cadastradas</Link>
-                <Link href="#">Quero me cadastrar</Link>
+                <LinkLocal href="/quemsomos" >Quem somos nós</LinkLocal>
+                <LinkLocal href="/parceiras">Empresas parceiras</LinkLocal>
+                <LinkLocal href="/instituicoes">Instituiçoes cadastradas</LinkLocal>
+                <LinkLocal href="/register">Quero me cadastrar</LinkLocal>
 
             </VStack>}
         </Box>
