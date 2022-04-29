@@ -7,11 +7,13 @@ export default function BlueButton({ text, link }) {
         color: 'white',
         background: '#003B70',
         fontFamily: 'sans-serif',
-        fontWeight: '600'
+        fontWeight: '600',
+        borderRadius: '50px'
     }
+    
     return (
         
-            <Button style={style}>
+            <Button style={style} Link={link ? link: ''}>
                 {text}
             </Button>
         
