@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react'
 
 export default function InfoNumberCards({title, description}) {
-    const text = {
+    const style = {
         color: '#003B70',
         fontFamily: 'sans-serif',
         fontWeight: '600'
@@ -21,8 +21,8 @@ export default function InfoNumberCards({title, description}) {
             borderRadius='md'
             padding='5%'
         >
-            <Text style={text} fontSize='8xl'>{title}</Text>
-            <Text style={text} fontSize='xl'>{description}</Text>
+            <Text style={style} fontSize='8xl'>{title}</Text>
+            <Text style={style} fontSize='xl'>{description}</Text>
         </Box>
     )
 }

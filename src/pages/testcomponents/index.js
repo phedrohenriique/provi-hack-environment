@@ -1,10 +1,11 @@
 import React from 'react'
+import BlueButton from '../../components/Button/BlueButton'
 import RegisterCard from '../../components/registercard'
 
 export default function TestComponents() {
     return (
         <>
-            <RegisterCard></RegisterCard>
+        <BlueButton text='button' link='http://localhost:3000'></BlueButton>
         </>
     )
 }
