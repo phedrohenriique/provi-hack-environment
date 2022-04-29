@@ -49,6 +49,23 @@ export default function RegisterCard() {
     return jsonRequest
   }
 
+  //api data handler to send the inputs values through api
+
+  const sendBodyReq = (event)=>{
+    event.preventDefault()
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name.input,
+        cpf: cpf.input,
+        password: '123',
+        email:'test@gmail.com'
+      }),
+      headers:{ 'Content-Type': 'application/json' }
+    }
+    fetch('http://localhost:3000/api/register',options).then(()=>{console.log("form sent")})   
+  }
+
   // the values of variables have to be passed through props
   // those props are connected with component children props
 
@@ -98,7 +115,7 @@ export default function RegisterCard() {
         <Button
         width='50%'
         alignSelf='center'
-        onClick={()=>{console.log(getInputs(name,cpf,password,email))}}
+        onClick={sendBodyReq}
         type='submit'
         >
           Registre-se
