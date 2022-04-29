@@ -1,5 +1,9 @@
 import React from 'react'
-import { Box, FormControl, FormLabel, Input, InputGroup, InputLeftAddon } from '@chakra-ui/react'
+import { 
+    Box, 
+    FormLabel, 
+    Input 
+} from '@chakra-ui/react'
 
 export default function StyledInput({ label, placeholder, type }) {
     return (
@@ -8,14 +12,17 @@ export default function StyledInput({ label, placeholder, type }) {
             display='flex'
             flexDirection='column'
             justifyContent='flex-start'
-            paddingX='4%'
+            paddingX='2%'
+            height='fit-content'
             >
-                <FormLabel>{label}</FormLabel>
+                <FormLabel>{label}:</FormLabel>
                 <Input 
                 bg='white' 
                 type={type ? type : 'text'} 
                 placeholder={placeholder ? placeholder : ''}
                 _placeholder={{opacity: 0.8,color: 'gray'}}
+                borderRadius='50px'
+                border='2px solid #003B70'
                 ></Input>
             </Box>
         </>

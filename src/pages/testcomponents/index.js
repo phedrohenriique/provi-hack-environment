@@ -1,13 +1,13 @@
 import React from 'react'
 import BlueButton from '../../components/Button/BlueButton'
 import GreenButton from '../../components/Button/GreenButton'
-import RegisterCard from '../../components/registercard'
+import LoginCard from '../../components/Logincard'
+import RegisterCardUser from '../../components/RegisterCardUser'
 
 export default function TestComponents() {
     return (
         <>
-        <BlueButton text='button'></BlueButton>
-        <GreenButton text={'button'}></GreenButton>
+        <RegisterCardUser></RegisterCardUser>
         </>
     )
 }
