@@ -1,9 +1,10 @@
 import React from 'react'
-import RegisterCard from '../../components/registercard'
+import RegisterCardUser from '../../components/RegisterCardUser'
+
 export default function TestComponents() {
     return (
         <>
-        <RegisterCardUser></RegisterCardUser>
+        <RegisterCardUser />
         </>
     )
 }

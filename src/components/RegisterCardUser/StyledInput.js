@@ -2,7 +2,8 @@ import React from 'react'
 import { 
     Box, 
     FormLabel, 
-    Input} from '@chakra-ui/react'
+    Input
+} from '@chakra-ui/react'
 
 export default function StyledInput({ label, placeholder, type, value, setValue}) {
 
@@ -31,6 +32,8 @@ export default function StyledInput({ label, placeholder, type, value, setValue}
                 value={value}
                 onChange={setValue}
                 id={label.toLocaleLowerCase('en-US')}
+                borderRadius='50px'
+                border='2px solid #003B70'
                 ></Input>
             </Box>
         </>

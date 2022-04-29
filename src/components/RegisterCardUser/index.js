@@ -1,19 +1,85 @@
 import {
   Box,
-  Checkbox,
   FormControl,
-  Text
+  Text,
+  Checkbox
 } from '@chakra-ui/react'
 import React from 'react'
-import BlueButton from '../Button/BlueButton'
 import StyledInput from './StyledInput'
+import BlueButton from '../Button/BlueButton'
 
 export default function RegisterCardUser() {
+
   const style = {
     color: 'black',
     fontFamily: 'sans-serif',
     fontWeight: '800'
   }
+  // setting variable value and the hook useState to set it
+  // same as writing const value = document.allSelect('')
+  const [name, setName] = React.useState({ input: '' })
+  const [cpf, setCpf] = React.useState({ input: '' })
+  const [email, setEmail] = React.useState({ input: '' })
+  const [password, setPassword] = React.useState({ input: '' })
+  // getting the targetted component value defined in component props
+  // setting the event to get the target value, in this case we pass as
+  // onChange props to get the state change of value
+  const nameInputHandler = (event) => {
+    setName({ input: event.target.value })
+    console.log('name :', name.input)
+  }
+
+  const cpfInputHandler = (event) => {
+    setCpf({ input: event.target.value })
+    console.log('cpf :', cpf.input)
+  }
+
+  const emailInputHandler = (event) => {
+    setEmail({ input: event.target.value })
+    console.log('email :', email.input)
+  }
+
+  const passwordInputHandler = (event) => {
+    setPassword({ input: event.target.value })
+    console.log('pasasword :', password.input)
+  }
+
+  // after updating variable values pass it all through an dictionary
+
+  const getInputs = (name, cpf, password, email) => {
+    const jsonRequest = {
+      name: name.input,
+      cpf: cpf.input,
+      email: email.input,
+      password: password.input
+    }
+
+    return jsonRequest
+  }
+
+  //api data handler to send the inputs values through api
+
+  const sendBodyReq = (event) => {
+    event.preventDefault()
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        name: name.input,
+        cpf: cpf.input,
+        password: '123',
+        email: 'test@gmail.com'
+      }),
+      headers: { 'Content-Type': 'application/json' }
+    }
+    fetch('http://localhost:3000/api/register', options).then(() => { console.log("form sent") })
+  }
+
+  // the values of variables have to be passed through props
+  // those props are connected with component children props
+
+  // type submit in the button makes page refresh, turn it off to see and
+  // confirm data
+
   return (
     <>
       <Box height='1.5'>
