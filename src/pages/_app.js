@@ -1,10 +1,13 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import { 
+  ChakraProvider,
+  Box
+ } from '@chakra-ui/react'
 import '../styles/globals.css'
-import RegisterCard from '../components/registercard'
 function MyApp({ Component, pageProps }) {
 
   return <>
     <ChakraProvider>
+    <Box height='20vh' background='#003B70' textAlign='center'>Header Navigator</Box>
       <Component {...pageProps} />
     </ChakraProvider>
   </>

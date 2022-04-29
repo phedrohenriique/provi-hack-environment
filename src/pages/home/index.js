@@ -1,15 +1,12 @@
 import React from 'react'
-import Button from '../../components/Button';
-import Card from '../../components/InfoCard';
+import InfoNumberCards from '../../components/InfoCards/InfoNumberCards';
 
-export default function index() {
+export default function HomePage() {
   return (
-    <div>
-      <h1>Home</h1>
-      <div>
-        <Button />
-        <Card />
-      </div>
-    </div>
+    <>
+    <InfoNumberCards 
+    title='+100' 
+    description='Pessoas conectadas à uma instituição' />
+    </>
   )
 }
