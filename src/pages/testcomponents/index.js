@@ -1,9 +1,5 @@
 import React from 'react'
-import BlueButton from '../../components/Button/BlueButton'
-import GreenButton from '../../components/Button/GreenButton'
-import LoginCard from '../../components/Logincard'
-import RegisterCardUser from '../../components/RegisterCardUser'
-
+import RegisterCard from '../../components/registercard'
 export default function TestComponents() {
     return (
         <>
