@@ -1,6 +1,7 @@
 /* import { userRouter } from "next/dist/client/router";
 import React from "react"; */
-import conn from "../../Database/conection"
+import conn from "../../../Database/conection"
+
 
 export default async function UsersId(req, res) {
   /* const router = userRouter;
@@ -10,7 +11,8 @@ export default async function UsersId(req, res) {
 
 
   const { data } = await conn.from("users").select("*").eq("id", id);
-  if (!data.usuario) {
+
+  if (!data) {
     return res.status(400).json({ message: "O usuario não foi encontrado" });
   }
 
@@ -20,7 +22,7 @@ export default async function UsersId(req, res) {
       if (usuario.id !== id) {
         return res.status(403).json({ message: "Você não tem permissão para alterar esse usuário" });
       }
-      
+
       const { error } = await conn.from('users').update({
         nome,
         cpf,
@@ -57,7 +59,7 @@ export default async function UsersId(req, res) {
       }
       const { data } = await conn.from("users").select("*").eq("id", id);
 
-      if (!data.usuario) {
+      if (!data) {
         return res.status(400).json({ message: "O usuario não foi encontrado" });
       }
 
