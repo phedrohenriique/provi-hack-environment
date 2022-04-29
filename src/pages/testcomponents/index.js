@@ -6,7 +6,7 @@ import RegisterCard from '../../components/registercard'
 export default function TestComponents() {
     return (
         <>
-        <BlueButton text='button' link='http://localhost:3000'></BlueButton>
+        <BlueButton text='button'></BlueButton>
         <GreenButton text={'button'}></GreenButton>
         </>
     )

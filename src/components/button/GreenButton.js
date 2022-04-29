@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from '@chakra-ui/react'
+import { Button, Link } from '@chakra-ui/react'
 
-export default function GreenButton({text, link}) {
+export default function GreenButton({ text, link }) {
     const style = {
         color: 'black',
         background: '#7ADFA5',
@@ -9,12 +9,14 @@ export default function GreenButton({text, link}) {
         fontWeight: '600',
         borderRadius: '50px'
     }
-    
+
     return (
-        
-            <Button style={style} Link={link ? link: ''}>
+        <Link
+            href={link ? link : undefined}
+            style={{ all: 'unset' }}>
+            <Button style={style}>
                 {text}
             </Button>
-        
+        </Link>
     )
 }

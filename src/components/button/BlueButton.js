@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Button, Link } from '@chakra-ui/react'
 
 export default function BlueButton({ text, link }) {
     const style = {
@@ -10,12 +9,14 @@ export default function BlueButton({ text, link }) {
         fontWeight: '600',
         borderRadius: '50px'
     }
-    
+
     return (
-        
-            <Button style={style} Link={link ? link: ''}>
+        <Link
+            href={link ? link : undefined}
+            style={{ all: 'unset' }}>
+            <Button style={style}>
                 {text}
             </Button>
-        
+        </Link>
     )
 }
