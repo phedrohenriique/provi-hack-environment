@@ -22,6 +22,7 @@ export default function StyledInput({ label, placeholder, type, value, setValue}
             justifyContent='flex-start'
             paddingX='2%'
             height='fit-content'
+            minWidth={'70%'}
             >
                 <FormLabel>{label}:</FormLabel>
                 <Input 
