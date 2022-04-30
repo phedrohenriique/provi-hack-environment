@@ -28,7 +28,7 @@ export default function UserInterface({ name }) {
 
     let [progress, setProgress] = React.useState(0)
 
-    if (progress > 100){
+    if (progress > 100) {
         setProgress(0)
     }
 
@@ -43,8 +43,9 @@ export default function UserInterface({ name }) {
                     </Box>
                     <Text fontSize={'sm'} style={styleText}>Após completar a barra você desbloqueia seu Cupom</Text>
                 </Box>
+                <Button colorScheme={'blue'} onClick={() => { setProgress(progress + 5) }}>Bar Increase</Button>
             </Box>
-            <Button colorScheme={'blue'} onClick={()=>{setProgress(progress + 5)}}>Bar Increase</Button>
+
         </>
     )
 }
