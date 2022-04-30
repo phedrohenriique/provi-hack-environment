@@ -1,9 +1,9 @@
 import React from 'react'
-import { 
-    Box, 
+import {
+    Box,
     Text,
     Progress
- } from '@chakra-ui/react'
+} from '@chakra-ui/react'
 
 export default function UserInterface({ name }) {
 
@@ -31,7 +31,9 @@ export default function UserInterface({ name }) {
                 <Text style={styleName} fontSize={'6xl'}>{name}</Text>
                 <Box display={'flex'} flexDirection={'column'} gap={3}>
                     <Text fontSize={'2xl'} style={styleTitle}>Seu Progresso</Text>
-                    <Progress border={'1px solid white'} borderRadius={50} value={50} />
+                    <Box border={'1px solid blue'} borderRadius={50}>
+                        <Progress border={'1px solid white'} borderRadius={50} value={50} />
+                    </Box>
                     <Text fontSize={'sm'} style={styleText}>Após completar a barra você desbloqueia seu Cupom</Text>
                 </Box>
             </Box>
