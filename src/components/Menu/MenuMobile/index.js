@@ -2,6 +2,7 @@ import { Box, IconButton, VStack } from "@chakra-ui/react";
 import { useState } from "react";
 import { RiCloseLine, RiMenu2Fill } from "react-icons/ri";
 import style from "../../../styles/menu.module.css"
+import CardLoginButtons from "../../CardLoginButtons";
 import LinkLocal from "../../LinkLocal";
 
 function MenuMobile() {
@@ -11,7 +12,7 @@ function MenuMobile() {
             <Box>
                 <IconButton
                     variant=""
-                    
+                    color="#7ADFA5"
                     fontSize="24"
                     icon={!Open ? <RiMenu2Fill /> : <RiCloseLine />}
                     _focus={{}}
@@ -23,22 +24,29 @@ function MenuMobile() {
 
             {Open && <VStack
                
-                w="70%"
+                w="100%"
                 h="100%"
-                bgColor="gray"
-                position="absolute"
-                mt={5}
-                left={0}
-                spacing={"30px"}
-                pt="30px"
-                align={"center"}
+                bgColor={"#003B70"}
+                position="absolute"              
+                left={0}   
+                pl="50px"         
+                align="flex-start"
+                justify="space-evenly"
             >
-                <LinkLocal href="/quemsomos" >Quem somos nós</LinkLocal>
-                <LinkLocal href="/parceiras">Empresas parceiras</LinkLocal>
-                <LinkLocal href="/instituicoes">Instituiçoes cadastradas</LinkLocal>
-                <LinkLocal href="/register">Quero me cadastrar</LinkLocal>
+                <VStack
+                 align="baseline"
+                >
+                    <LinkLocal href="/quemsomos" >Home</LinkLocal>
+                    <LinkLocal href="/instituicoes">Instituiçoes</LinkLocal>
 
-            </VStack>}
+                    <LinkLocal href="/parceiras">Empresas</LinkLocal>
+                    <LinkLocal href="/register">RePensar</LinkLocal>
+                    <LinkLocal href="/instituicoes">ReUtilizar</LinkLocal>
+                    <LinkLocal href="/instituicoes">Quero RePassar</LinkLocal>
+                    </VStack>
+                <CardLoginButtons Ver />
+            </VStack>
+            }
         </Box>
     )
 }
