@@ -1,13 +1,41 @@
-import { Center } from '@chakra-ui/react'
-import LoginCard from '../../components/Logincard'
+import react from "react"
+import Image from "next/image"
+import world from '../../assets/sustainableworld.png'
+import {
+  Box,
+  Text
+} from "@chakra-ui/react"
+import LoginCard from "../../components/Logincard"
 
-function LoginPage() {
-
+export default function LoginPage() {
+    const style = {
+      color: 'blue.600'
+    }
+  
+    const styleText = {
+      fontFamily: 'sans-serif',
+      fontWeight: 'bold',
+      color: 'white'
+    }
+  
     return (
-        <Center h={"100vh"}>
-            <LoginCard />
-        </Center>
+      <>
+        <Box 
+        marginY='2%'
+        display='flex'
+        flexDir='row'
+        alignItems='center'
+        justifyContent='space-around'
+        gap={5}
+        >
+          <Image 
+          src={world} 
+          width='500px'
+          height='500px' 
+          layout="fixed"
+          />
+          <LoginCard />
+        </Box>
+      </>
     )
-}
-
-export default LoginPage
+  }

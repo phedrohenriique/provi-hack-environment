@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react"
 import LoginCard from "../components/Logincard"
 
-export default function Home() {
+export default function Login() {
   const style = {
     color: 'blue.600'
   }
@@ -20,22 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <Box 
-      marginY='2%'
-      display='flex'
-      flexDir='row'
-      alignItems='center'
-      justifyContent='space-around'
-      gap={5}
-      >
-        <Image 
-        src={world} 
-        width='500px'
-        height='500px' 
-        layout="fixed"
-        />
-        <LoginCard />
-      </Box>
+      Default Page
     </>
   )
 }

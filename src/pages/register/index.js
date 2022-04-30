@@ -1,10 +1,10 @@
 import React from 'react'
-import RegisterCard from '../../components/registercard'
+import RegisterCardUser from '../../components/RegisterCardUser'
 
 export default function RegisterPage() {
   return (
     <>
-    <RegisterCard></RegisterCard>
+    <RegisterCardUser />
     </>
   )
 }
