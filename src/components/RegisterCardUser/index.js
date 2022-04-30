@@ -82,7 +82,7 @@ export default function RegisterCardUser() {
 
   return (
     <>
-      <Box height='1.5'>
+      <Box>
         <FormControl
           background='white'
           display='flex'

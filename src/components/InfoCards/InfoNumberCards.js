@@ -21,7 +21,7 @@ export default function InfoNumberCards({title, description}) {
             borderRadius='md'
             padding='5%'
         >
-            <Text style={style} fontSize='8xl'>{title}</Text>
+            <Text style={style} fontSize='7xl'>{title}</Text>
             <Text style={style} fontSize='xl'>{description}</Text>
         </Box>
     )
