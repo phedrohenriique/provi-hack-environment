@@ -13,18 +13,9 @@ import {
 import React from 'react'
 import BlueButton from '../Button/BlueButton'
 
-function LoginCard() {
+function LoginCard({email, password, inputHandler, data}) {
 
     ///////////////////////
-
-    const loginStorage = {
-        email: '',
-        password: ''
-    }
-
-    const handleLoginStorage = (event)=>{
-        const {email, password} = 2
-    }
 
     //////////////////////
 
@@ -34,22 +25,12 @@ function LoginCard() {
         fontWeight: '800'
     }
 
-    const [login, setLogin] = React.useState({
-        email: "",
-        senha: ""
-    })
-
-    const [show, setShow] = React.useState(false);
-
-    const handleInputChange = (evt) => {
-        const { name, value } = evt.target;
-        setLogin({ ...login, ...{ [name]: value } });
-    }
+    const loginDataCard = data
 
     const handleSubmit = async (evt) => {
         evt.preventDefault();
 
-        const options = { method: "POST", body: JSON.stringify(login) };
+        const options = { method: "POST", body: JSON.stringify(loginDataCard) };
         const response = await fetch("api/login", options);
         const data = await response.json();
 
@@ -83,27 +64,27 @@ function LoginCard() {
                         Faça seu Login
                     </Text>
                     <FormControl isRequired>
-                        <FormLabel htmlFor='email'>Email</FormLabel>
+                        <FormLabel>Email</FormLabel>
                         <Input
                             id="email"
                             name='email'
                             type='email'
-                            value={login.email}
-                            onChange={handleInputChange}
+                            value={email}
+                            onChange={inputHandler}
                         />
                     </FormControl>
                     <FormControl isRequired>
-                        <FormLabel htmlFor='senha'>Senha</FormLabel>
+                        <FormLabel>Senha</FormLabel>
                         <Input
                             id="senha"
-                            name='senha'
-                            type={show ? 'text' : 'PASSWORD'}
-                            value={login.senha}
-                            onChange={handleInputChange}
+                            name='password'
+                            type='password'
+                            value={password}
+                            onChange={inputHandler}
                         />
                     </FormControl>
                     <Checkbox border='black' alignSelf='flex-start'>lembrar informações </Checkbox>
-                    <Box><BlueButton type='submit' text={'Entrar'} width='md' /></Box>
+                    <Box><BlueButton onSubmit={handleSubmit} type='submit' text={'Entrar'} width='md' /></Box>
                     <Text>Não possui conta ? <Link color='teal.500' href='#'>Cadastre-se</Link></Text>
                     <Text>Esqueci minha senha <Link color='teal.500' href='#'>Recuperar</Link></Text>
                     <Text>Ao Fazer Login você concorda com os <Link color='teal.500' href='#'>Termos de Uso</Link></Text>

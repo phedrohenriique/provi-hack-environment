@@ -13,7 +13,6 @@ export default function LoginPage() {
     //////////////////////////
     // local storage simple logic for test
 
-    const [data, setData] = React.useState()
     const userOne = {
       email: 'pedro@gmail.com',
       password: '123'
@@ -23,23 +22,26 @@ export default function LoginPage() {
     localStorage.setItem('users', JSON.stringify(userOne));
 
     const userData = JSON.parse(localStorage.getItem('users'));
-    setData(userData);
     console.log('LocalStorage :',userData);
 
     },[])
 
+    //////////////////////
+    // Login Data getting inputs information
+
+    const [loginData, setLoginData ] = React.useState({
+      email:'',
+      password:''
+    }) 
+    // getting component values(prop) based on their name (prop)
+    const handlerLoginStorage = (event)=>{
+      const {name, value} = event.target
+      setLoginData({ ...loginData, [name]: value })
+      console.log(loginData)
+    }
+
     ////////////////////////
 
-    const style = {
-      color: 'blue.600'
-    }
-  
-    const styleText = {
-      fontFamily: 'sans-serif',
-      fontWeight: 'bold',
-      color: 'white'
-    }
-  
     return (
       <>
         <Box 
@@ -56,7 +58,12 @@ export default function LoginPage() {
           height='500px' 
           layout="fixed"
           />
-          <LoginCard />
+          <LoginCard 
+          email={loginData.email} 
+          password={loginData.password} 
+          inputHandler={handlerLoginStorage} 
+          data={loginData}
+          />
         </Box>
       </>
     )
