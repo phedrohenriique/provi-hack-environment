@@ -1,14 +1,14 @@
 import {
   Box,
-  Text
 } from '@chakra-ui/react';
 import React from 'react'
-import Image from "next/image"
 import InstitutionCard from '../../components/InstitutionCard'
+import SearchCard from '../../components/SearchCard'
 import lightOn from '../../assets/lightOnGreen.png'
 import dogGreen from '../../assets/dogGreen.png'
 import clover from '../../assets/clover.png'
 import group from '../../assets/group.png'
+
 
 
 export default function InstitutionPage() {
@@ -24,20 +24,7 @@ export default function InstitutionPage() {
         justifyContent={'center'}
         marginTop={'40px'}
       >
-        <Box
-          border={' 0.5px solid #CCD8E2'}
-          boxSizing={'border-box'}
-          boxShadow={'0px 5px 30px rgba(0, 0, 0, 0.05)'}
-          borderRadius={' 16px 0 0 16px'}
-          background={'#FFFFFF'}
-          width={'420px'}
-          height={'600px'}
-          display={'flex'}
-          alignItems={'center'}
-          justifyContent={'center'}
-        >
-          card de busca
-        </Box>
+        <SearchCard />
         <Box
           border={'0.5px solid #CCD8E2'}
           boxSizing={'border-box'}
