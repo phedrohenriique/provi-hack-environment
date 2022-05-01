@@ -47,6 +47,7 @@ function LoginCard() {
 
     }
 
+
     return (
         <Box 
         minW={'-moz-fit-content'}
