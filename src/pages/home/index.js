@@ -2,24 +2,24 @@ import {
   Box,
   Text
 } from '@chakra-ui/react';
-import React from 'react'
+import React, {useRef} from 'react'
 import Image from "next/image"
 import InfoNumberCards from '../../components/InfoCards/InfoNumberCards';
 import image1 from '../../assets/ilus23worldbloom.png'
 
 export default function HomePage() {
 
-  const styleTitle = {
+  const styleTitle = useRef({
     color: '#003B70',
     fontFamily: 'sans-serif',
     fontWeight: '800'
-  }
+  })
 
-  const styleText = {
+  const styleText = useRef({
     color: 'black',
     fontFamily: 'sans-serif',
     fontWeight: '800'
-  }
+  })
 
   return (
     <>
@@ -41,10 +41,10 @@ export default function HomePage() {
             gap={5}
             width='40%'
           >
-            <Text fontSize={'4xl'} style={styleTitle}>
+            <Text fontSize={'4xl'} style={styleTitle.current}>
               O que é a RePensa?
             </Text>
-            <Text style={styleText}>
+            <Text style={styleText.current}>
               Somos uma startup com foco no Meio Ambiente e no Combate a Desigualdade Social.
               Nosso Hub é um facilitador que conecta pessoas.
               Observamos a dificuldade de acesso a informação quando queremos descobrir alguma instituição local, principalmente a existência de Associações de Reciclagem que fazem

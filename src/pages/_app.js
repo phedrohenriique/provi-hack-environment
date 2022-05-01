@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
 
   return <>
     <ChakraProvider>
-    <Header />
+      <Header />
       <Component {...pageProps} />
     </ChakraProvider>
   </>

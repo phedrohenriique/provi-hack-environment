@@ -1,47 +1,51 @@
-import { Text, Stack} from '@chakra-ui/react'
-import React from 'react'
+import { Text, Stack, HStack} from '@chakra-ui/react'
+import React, {useRef} from 'react'
 import LinkLocal from '../LinkLocal'
-import GreenButton from "../Button/GreenButton"
-import BlueButton from "../Button/BlueButton"
+import BlueButton from "./../Button/BlueButton"
+import GreenButton from "./../Button/GreenButton"
 
 function CardLoginButtons({ Hor }) {
-    
+    const version = useRef( Hor ? "row" : "column" )
+
     return (
         <Stack
             align="start"
             spacing={"25px"}
-            direction={Hor ? "row": "column"}
+            direction={version.current}
         >
-            <GreenButton >
+            <GreenButton href="#">
             Entrar
             </GreenButton>
 
-            <BlueButton
-                
-            >
+            <BlueButton href="#">
                 Sou instituição
             </BlueButton>
         
-            
-            <Text
-                fontWeight="400"
-                fontSize="14px"
-                lineHeight="150%"
-                letter-spacing= "-0.022em"
-                color="#FFFFFF"
+            <HStack
                 display={Hor ? "none": "block"}
+                w="100%"
             >
-            Não tem uma conta ? 
-            <LinkLocal 
-                display="inline-block"
-                fontSize="14px"
-                fontWeight="600"
-                pl="1"
-                textTransform="capitalize"
-            href="/register">
-             cadastrar
-            </LinkLocal>
-            </Text>
+                <Text
+                    fontWeight="400"
+                    fontSize="14px"
+                    lineHeight="150%"
+                    letterSpacing= "-0.022em"
+                    color="#FFFFFF"
+                    display="inline"
+                >
+                Não tem uma conta ? 
+                </Text>
+                <LinkLocal 
+                    display="inline-block"
+                    fontSize="14px"
+                    fontWeight="600"
+                    pl="1"
+                    textTransform="capitalize"
+                href="/register">
+                cadastrar
+                </LinkLocal>
+            </HStack>
+            
         </Stack>
     )
 }

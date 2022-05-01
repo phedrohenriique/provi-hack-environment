@@ -1,8 +1,7 @@
-import {HStack, Image } from '@chakra-ui/react'
+import { HStack, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import React from 'react'
 import MenuDesktop from '../Menu/MenuDesktop'
-
 import MenuMobile from '../Menu/MenuMobile'
 
 function Header() {
@@ -14,13 +13,15 @@ function Header() {
             h="80px"
             bgColor={"#003B70"}
         >
-            <MenuMobile />
-            
-            <Link href="/home" >
-                <Image maxH="100%" src='assets/logo.png' alt="logo" cursor={"pointer"}/>
-            </Link>
-            
-            <MenuDesktop />
+
+            {< MenuMobile />}
+
+            {<Link href="/home" >
+                    <Image maxH="100%" src='assets/logo.png' alt="logo" cursor={"pointer"}/>
+                </Link>}
+
+            {<MenuDesktop />}
+
         </HStack>
     )
 }

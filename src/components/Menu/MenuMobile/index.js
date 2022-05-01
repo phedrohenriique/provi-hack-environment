@@ -1,5 +1,5 @@
 import { Box, IconButton, VStack } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { RiCloseLine, RiMenu2Fill } from "react-icons/ri";
 import style from "../../../styles/menu.module.css"
 import CardLoginButtons from "../../CardLoginButtons";
@@ -7,6 +7,12 @@ import LinkLocal from "../../LinkLocal";
 
 function MenuMobile() {
     const [Open, setOpen] = useState(false)
+    const [icon, setIcon] = useState(<RiMenu2Fill />)
+    
+    useEffect(() => {
+       setIcon( !Open ? <RiMenu2Fill /> : <RiCloseLine />)
+    }, [Open])
+    
     return (
         <Box className={style.mobileMenu} h="100%">
             <Box>
@@ -14,7 +20,7 @@ function MenuMobile() {
                     variant=""
                     color="#7ADFA5"
                     fontSize="24"
-                    icon={!Open ? <RiMenu2Fill /> : <RiCloseLine />}
+                    icon={icon}
                     _focus={{}}
                     onClick={() => {
                         setOpen(!Open);
@@ -45,7 +51,7 @@ function MenuMobile() {
                     <LinkLocal href="/instituicoes">ReUtilizar</LinkLocal>
                     <LinkLocal href="/instituicoes">Quero RePassar</LinkLocal>
                     </VStack>
-                <CardLoginButtons Ver />
+                <CardLoginButtons />
             </VStack>
             }
         </Box>

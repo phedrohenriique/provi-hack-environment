@@ -1,11 +1,11 @@
-import {HStack} from "@chakra-ui/react";
+import {HStack, Box} from "@chakra-ui/react";
 import style from "../../../styles/menu.module.css"
 import CardLoginButtons from "../../CardLoginButtons";
 import LinkLocal from "../../LinkLocal";
 
 function MenuDesktop() {
     return (
-        <box className={style.menuDesktop} >
+        <Box className={style.menuDesktop} >
             <HStack 
                 spacing="1rem"
             >
@@ -14,7 +14,7 @@ function MenuDesktop() {
                 <LinkLocal href="/instituicoes">Instituiçoes cadastradas</LinkLocal>
                 <CardLoginButtons Hor />
             </HStack>
-        </box>
+        </Box>
 
     )
 }
