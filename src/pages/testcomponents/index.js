@@ -15,9 +15,7 @@ export default function TestComponents() {
 
     return (
         <>
-            <UserInterface name={'Bruxo'} />
-            <InstitutionCard title={title} description={description} institution={clover} alt={alt} btn1={dogGreen} btn1Text={'ANIMAL'} btn2={lightOn} btn2Text={'ONG'} />
-            <InstitutionCard title={title} description={description} institution={group} alt={alt} btn1={dogGreen} btn1Text={'ANIMAL'} btn2={lightOn} btn2Text={'ONG'} />
+            
         </>
     )
 }
