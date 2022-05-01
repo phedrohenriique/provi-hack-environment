@@ -1,6 +1,7 @@
 import { Box,VStack ,HStack, Text, Stack} from '@chakra-ui/react'
 import React from 'react'
 import LinkLocal from '../LinkLocal'
+import {GreenButton} from "../Button"
 
 function CardLoginButtons({ Hor }) {
     
@@ -10,30 +11,15 @@ function CardLoginButtons({ Hor }) {
             spacing={"15px"}
             direction={Hor ? "row": "column"}
         >
-            <LinkLocal
-                href="/login"
-                bg="#7ADFA5"
-                box-shadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-                borderRadius="16px"
-                padding="5px 24px"
-                fontSize="20px"
-                fontWeight="600"
-                color="black"
-            >
+            <GreenButton>
                 Entrar
-            </LinkLocal>
-            <LinkLocal
-                href="/loginInstituicao"
-                border="1px solid #7ADFA5"
-                box-shadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-                borderRadius="16px"
-                padding="5px 24px"
-                fontSize="20px"
-                fontWeight="600"
-                color="#fff"
+            </GreenButton>
+
+            <BlueButton
+                
             >
                 Sou instituição
-            </LinkLocal>
+            </BlueButton>
         
             
             <Text
