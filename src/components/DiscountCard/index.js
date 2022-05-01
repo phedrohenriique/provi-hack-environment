@@ -5,6 +5,7 @@ import {
 import React from 'react'
 import Image from "next/image"
 import ifood from '../../assets/ifood.png'
+import ticket from '../../assets/ticket.png'
 
 export default function DiscountCard() {
 
