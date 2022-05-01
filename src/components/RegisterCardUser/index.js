@@ -15,15 +15,19 @@ export default function RegisterCardUser() {
     fontFamily: 'sans-serif',
     fontWeight: '800'
   }
+
   // setting variable value and the hook useState to set it
   // same as writing const value = document.allSelect('')
+
   const [name, setName] = React.useState({ input: '' })
   const [cpf, setCpf] = React.useState({ input: '' })
   const [email, setEmail] = React.useState({ input: '' })
   const [password, setPassword] = React.useState({ input: '' })
+
   // getting the targetted component value defined in component props
   // setting the event to get the target value, in this case we pass as
   // onChange props to get the state change of value
+  
   const nameInputHandler = (event) => {
     setName({ input: event.target.value })
     console.log('name :', name.input)

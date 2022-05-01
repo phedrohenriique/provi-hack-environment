@@ -13,7 +13,7 @@ export default function UserInterface({ name }) {
 
     let [progress, setProgress] = React.useState(0)
     let [discounts, setDiscounts] = React.useState([1])
-
+    // sets states to all items of array discounts and add value
     const discountHandler = (value)=>{
         setDiscounts([...discounts, value])
     }
