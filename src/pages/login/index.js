@@ -24,7 +24,7 @@ export default function LoginPage() {
 
     const userData = JSON.parse(localStorage.getItem('users'));
     setData(userData);
-    console.log('printed');
+    console.log('LocalStorage :',userData);
 
     },[])
 

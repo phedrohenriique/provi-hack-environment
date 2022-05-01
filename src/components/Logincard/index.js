@@ -14,6 +14,20 @@ import React from 'react'
 import BlueButton from '../Button/BlueButton'
 
 function LoginCard() {
+
+    ///////////////////////
+
+    const loginStorage = {
+        email: '',
+        password: ''
+    }
+
+    const handleLoginStorage = (event)=>{
+        const {email, password} = 2
+    }
+
+    //////////////////////
+
     const style = {
         color: 'black',
         fontFamily: 'sans-serif',
