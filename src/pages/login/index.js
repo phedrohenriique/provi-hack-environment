@@ -6,8 +6,30 @@ import {
   Text
 } from "@chakra-ui/react"
 import LoginCard from "../../components/Logincard"
+import React from 'react'
 
 export default function LoginPage() {
+
+    //////////////////////////
+    // local storage simple logic for test
+
+    const [data, setData] = React.useState()
+    const userOne = {
+      email: 'pedro@gmail.com',
+      password: '123'
+    }
+  
+    React.useEffect(()=>{
+    localStorage.setItem('users', JSON.stringify(userOne));
+
+    const userData = JSON.parse(localStorage.getItem('users'));
+    setData(userData);
+    console.log('printed');
+
+    },[])
+
+    ////////////////////////
+
     const style = {
       color: 'blue.600'
     }

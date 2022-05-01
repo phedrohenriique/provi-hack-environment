@@ -43,6 +43,7 @@ function LoginCard() {
         console.log(data)
         if (token) {
             alert('success')
+            console.log('success')
         }
 
     }
