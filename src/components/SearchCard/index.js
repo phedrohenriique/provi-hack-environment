@@ -6,13 +6,14 @@ import {
 } from '@chakra-ui/react'
 import Link from 'next/link'
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from "next/image"
 import left from '../../assets/left.png'
 
 
 export default function SearchCard(/* { title, description, institution, alt, btn1, btn1Text, btn2, btn2Text } */) {
-  const { filter, setFilter } = useState();
+
+
 
 
   return (
@@ -60,7 +61,7 @@ export default function SearchCard(/* { title, description, institution, alt, bt
             letterSpacing={'-0.022em'}
             color={'#000000'}
           >
-            Para adquirir benefícios, considere se <Text color={'#33628D'}><Link href={'/register'}>cadastrar</Link></Text>
+            Para adquirir benefícios, considere se <Text color={'#33628D'}><Link href={'/register'}>cadastrar.</Link></Text>
           </Text>
           <Box marginTop={'30px'}>
             <Text
@@ -88,7 +89,7 @@ export default function SearchCard(/* { title, description, institution, alt, bt
               display={'flex'}
               flexDirection={'column'}
             >
-              <Checkbox border='black'>Idosos</Checkbox>
+              <Checkbox border='black' >Idosos</Checkbox>
               <Checkbox border='black' >Social (campanhas, escolas, igrejas, etc)</Checkbox>
               <Checkbox border='black' >Meio-ambiente</Checkbox>
               <Checkbox border='black' >Animais</Checkbox>
