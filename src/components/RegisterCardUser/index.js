@@ -41,7 +41,7 @@ export default function RegisterCardUser() {
 
   const passwordInputHandler = (event) => {
     setPassword({ input: event.target.value })
-    console.log('pasasword :', password.input)
+    console.log('password :', password.input)
   }
 
   // after updating variable values pass it all through an dictionary
