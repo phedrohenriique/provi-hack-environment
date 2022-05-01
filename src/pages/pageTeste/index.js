@@ -58,10 +58,10 @@ const Categoria = ({ type, size}) => {
 function teste() {
     return (
         <div>
-            <Categoria type="crianca" size={5}/>
-            <Categoria type="animal" size={4}/>
-            <Categoria type="idosos" size={3}/>
-            <Categoria type="saude" size={2}/>
+            <Categoria type="crianca"   size={5}/>
+            <Categoria type="animal"    size={4}/>
+            <Categoria type="idosos"    size={3}/>
+            <Categoria type="saude"     size={2}/>
         </div>
     )
 }

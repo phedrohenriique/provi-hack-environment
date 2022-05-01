@@ -32,6 +32,7 @@ function MenuMobile() {
                 pl="50px"         
                 align="flex-start"
                 justify="space-evenly"
+                zIndex={1000}
             >
                 <VStack
                  align="baseline"

@@ -1,8 +1,6 @@
-import { Box, Flex, HStack, IconButton, Image } from '@chakra-ui/react'
+import {HStack, Image } from '@chakra-ui/react'
 import Link from 'next/link'
 import React from 'react'
-import { RiEyeFill } from 'react-icons/ri'
-import LinkLocal from '../LinkLocal'
 import MenuDesktop from '../Menu/MenuDesktop'
 
 import MenuMobile from '../Menu/MenuMobile'
@@ -18,8 +16,8 @@ function Header() {
         >
             <MenuMobile />
             
-            <Link href="/home">
-                <Image maxH="100%" src='assets/logo.png' alt="logo" />
+            <Link href="/home" >
+                <Image maxH="100%" src='assets/logo.png' alt="logo" cursor={"pointer"}/>
             </Link>
             
             <MenuDesktop />

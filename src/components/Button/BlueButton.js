@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Link } from '@chakra-ui/react'
 
-export default function BlueButton({ text, link, width}) {
+export default function BlueButton({ link, width,children}) {
     const style = {
         color: 'white',
         background: '#003B70',
@@ -15,7 +15,7 @@ export default function BlueButton({ text, link, width}) {
             href={link ? link : undefined}
             style={{ all: 'unset' }}>
             <Button style={style} width={width}>
-                {text}
+                {children}
             </Button>
         </Link>
     )

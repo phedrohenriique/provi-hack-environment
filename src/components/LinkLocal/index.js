@@ -13,6 +13,7 @@ function LinkLocal(props) {
           lineHeight= "150%"
           letterSpacing="-0.022em"
           color="#fff"
+          cursor={"pointer"}
           {...props}>
             <Link  href={props.href}>{props.children}</Link>
         </Box>

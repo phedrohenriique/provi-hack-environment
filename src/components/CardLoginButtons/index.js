@@ -1,18 +1,19 @@
-import { Box,VStack ,HStack, Text, Stack} from '@chakra-ui/react'
+import { Text, Stack} from '@chakra-ui/react'
 import React from 'react'
 import LinkLocal from '../LinkLocal'
-import {GreenButton} from "../Button"
+import GreenButton from "../Button/GreenButton"
+import BlueButton from "../Button/BlueButton"
 
 function CardLoginButtons({ Hor }) {
     
     return (
         <Stack
             align="start"
-            spacing={"15px"}
+            spacing={"25px"}
             direction={Hor ? "row": "column"}
         >
-            <GreenButton>
-                Entrar
+            <GreenButton >
+            Entrar
             </GreenButton>
 
             <BlueButton
