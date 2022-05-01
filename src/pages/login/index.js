@@ -6,18 +6,42 @@ import {
   Text
 } from "@chakra-ui/react"
 import LoginCard from "../../components/Logincard"
+import React from 'react'
 
 export default function LoginPage() {
-    const style = {
-      color: 'blue.600'
+
+    //////////////////////////
+    // local storage simple logic for test
+
+    const userOne = {
+      email: 'pedro@gmail.com',
+      password: '123'
     }
   
-    const styleText = {
-      fontFamily: 'sans-serif',
-      fontWeight: 'bold',
-      color: 'white'
+    React.useEffect(()=>{
+    localStorage.setItem('users', JSON.stringify(userOne));
+
+    const userData = JSON.parse(localStorage.getItem('users'));
+    console.log('LocalStorage :',userData);
+
+    },[])
+
+    //////////////////////
+    // Login Data getting inputs information
+
+    const [loginData, setLoginData ] = React.useState({
+      email:'',
+      password:''
+    }) 
+    // getting component values(prop) based on their name (prop)
+    const handlerLoginStorage = (event)=>{
+      const {name, value} = event.target
+      setLoginData({ ...loginData, [name]: value })
+      console.log(loginData)
     }
-  
+
+    ////////////////////////
+
     return (
       <>
         <Box 
@@ -34,7 +58,12 @@ export default function LoginPage() {
           height='500px' 
           layout="fixed"
           />
-          <LoginCard />
+          <LoginCard 
+          email={loginData.email} 
+          password={loginData.password} 
+          inputHandler={handlerLoginStorage} 
+          data={loginData}
+          />
         </Box>
       </>
     )

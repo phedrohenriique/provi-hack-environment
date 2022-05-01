@@ -3,49 +3,42 @@ import {
     Box,
     Text,
     Progress,
-    Button
+    Button,
+    color
 } from '@chakra-ui/react'
+import ProgressDiscount from './ProgressDiscount'
+import DiscountCard from '../DiscountCard'
 
 export default function UserInterface({ name }) {
 
-    const styleName = {
-        color: '#003B70',
-        fontFamily: 'sans-serif',
-        fontWeight: '600'
-    }
-
-    const styleTitle = {
-        color: '#003B70',
-        fontFamily: 'sans-serif',
-        fontWeight: '600'
-    }
-
-    const styleText = {
-        color: 'black',
-        fontFamily: 'sans-serif',
-        fontWeight: '600'
-    }
-
     let [progress, setProgress] = React.useState(0)
+    let [discounts, setDiscounts] = React.useState([1])
+    // sets states to all items of array discounts and add value
+    const discountHandler = (value)=>{
+        setDiscounts([...discounts, value])
+    }
 
     if (progress > 100) {
-        setProgress(0)
+        console.log(discounts);
+        discountHandler(1);
+        setProgress(0);
+        console.log(discounts);
     }
+
 
     return (
         <>
-            <Box padding={3} width={'fit-content'}>
-                <Text style={styleName} fontSize={'6xl'}>{name}</Text>
-                <Box display={'flex'} flexDirection={'column'} gap={3}>
-                    <Text fontSize={'2xl'} style={styleTitle}>Seu Progresso {`${progress} %`}</Text>
-                    <Box border={'1px solid blue'} borderRadius={50}>
-                        <Progress border={'1px solid white'} borderRadius={50} value={progress} />
-                    </Box>
-                    <Text fontSize={'sm'} style={styleText}>Após completar a barra você desbloqueia seu Cupom</Text>
+            <Box display={'flex'} flexDirection={'column'} gap={3}>
+                <ProgressDiscount name={name} value={progress} />
+                <Box display={'flex'} flexDirection={'row'} gap={5}>
+                    <Button>Categoria 1</Button>
+                    <Button>Categoria 2</Button>
+                    <Button colorScheme={'blue'} onClick={() => { setProgress(progress + 5) }}>Donation</Button>
                 </Box>
-                <Button colorScheme={'blue'} onClick={() => { setProgress(progress + 5) }}>Bar Increase</Button>
+                <Box display={'flex'} flexDirection={'column'} gap={3}>
+                    {discounts.map(()=>{ return <DiscountCard />})}
+                </Box>
             </Box>
-
         </>
     )
 }

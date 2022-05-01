@@ -5,6 +5,7 @@ import bcrypt from "bcrypt"
 import jwt from "jsonwebtoken";
 
 export default async function loginRoute(req, res) {
+
     const { email, senha } = JSON.parse( req.body );
     
     if (!email || !senha) {
