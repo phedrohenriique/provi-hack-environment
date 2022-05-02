@@ -1,11 +1,4 @@
 import React from 'react'
-import DiscountCard from '../../components/DiscountCard'
-import UserInterface from '../../components/UserInterface'
-import lightOn from '../../assets/lightOnGreen.png'
-import dogGreen from '../../assets/dogGreen.png'
-import clover from '../../assets/clover.png'
-import group from '../../assets/group.png'
-import { Box } from '@chakra-ui/react'
 
 export default function TestComponents() {
 

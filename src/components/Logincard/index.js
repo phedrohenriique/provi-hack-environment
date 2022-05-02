@@ -13,7 +13,7 @@ import {
 import React from 'react'
 import BlueButton from '../Button/BlueButton'
 
-function LoginCard({email, password, inputHandler, data}) {
+function LoginCard({email, password, inputHandler, data, onClick}) {
 
     ///////////////////////
 
@@ -49,7 +49,7 @@ function LoginCard({email, password, inputHandler, data}) {
         minW={'-moz-fit-content'}
         minH={'-moz-fit-content'}
         >
-            <form onSubmit={handleSubmit}>
+            <form>
                 <VStack
                     minW={'50%'}
                     minHeight={'50%'}
@@ -84,7 +84,7 @@ function LoginCard({email, password, inputHandler, data}) {
                         />
                     </FormControl>
                     <Checkbox border='black' alignSelf='flex-start'>lembrar informações </Checkbox>
-                    <Box><BlueButton onSubmit={handleSubmit} type='submit' text={'Entrar'} width='md' /></Box>
+                    <Button onClick={onClick}>Entre</Button>
                     <Text>Não possui conta ? <Link color='teal.500' href='#'>Cadastre-se</Link></Text>
                     <Text>Esqueci minha senha <Link color='teal.500' href='#'>Recuperar</Link></Text>
                     <Text>Ao Fazer Login você concorda com os <Link color='teal.500' href='#'>Termos de Uso</Link></Text>

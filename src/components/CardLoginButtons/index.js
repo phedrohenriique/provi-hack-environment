@@ -6,6 +6,14 @@ import GreenButton from "./../Button/GreenButton"
 
 function CardLoginButtons({ Hor }) {
     const version = useRef( Hor ? "row" : "column" )
+    const [loggedUser, setLoggedUser] = React.useState()
+
+    React.useEffect(()=>{
+        // inside here userData is another variable
+        const data = JSON.parse(localStorage.getItem('loggedUser'));
+        setLoggedUser(data)
+    
+        },[])
 
     return (
         <Stack
@@ -13,14 +21,14 @@ function CardLoginButtons({ Hor }) {
             spacing={"25px"}
             direction={version.current}
         >
-            <GreenButton href="#">
+            <GreenButton href="http://localhost:3000/login">
             Entrar
             </GreenButton>
 
             <BlueButton href="#">
-                Sou instituição
+                Cadastrar
             </BlueButton>
-        
+
             <HStack
                 display={Hor ? "none": "block"}
                 w="100%"
