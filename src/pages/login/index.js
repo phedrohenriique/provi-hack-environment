@@ -13,14 +13,16 @@ export default function LoginPage() {
   const router = useRouter()
     //////////////////////////
     // local storage simple logic for test
-    const [storedData, setStoredData] = React.useState()
+    const [storedData, setStoredData] = React.useState([])
 
     const users = [{
+      name: "pedro",
       email: 'pedro@gmail.com',
       password: '123',
       login: false
     },
     {
+      name: "alison",
       email: 'alisson@gmail.com',
       password: '123',
       login: false
@@ -34,9 +36,9 @@ export default function LoginPage() {
   
     React.useEffect(()=>{
     // inside here userData is another variable
+    localStorage.getItem('users', JSON.stringify(users))
     const userDataRequested = JSON.parse(localStorage.getItem('users'));
-    setStoredData(userDataRequested)
-
+    setStoredData(userDataRequested);
     },[])
 
     //////////////////////
@@ -73,7 +75,7 @@ export default function LoginPage() {
       else {
         router.push(`http://localhost:3000/home`)
         user.login = true
-        console.log('logged user', user.email, 'on :', user.login)
+        console.log('logged user', user.email, 'nome:', user.name ,'on :', user.login)
         console.log(user)
         localStorage.setItem("loggedUser", JSON.stringify(user))
       }
